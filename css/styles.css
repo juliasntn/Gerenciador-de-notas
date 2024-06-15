@@ -1,0 +1,163 @@
+style
+
+
+/* Geral */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: white;
+}
+
+/* Cabeçalho */
+header {
+  border-bottom: 1px solid black;
+  padding: 1rem 2rem;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#search-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+#search-input {
+  background-color: aliceblue;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  font-weight: bold;
+  color: black;
+  width: 400px;
+  outline: black solid 1px;
+}
+
+#search-input:hover {
+  outline: black solid 2px;
+}
+
+#search-input::placeholder {
+  color: black;
+}
+
+#export-notes {
+  background-color: aliceblue;
+  border: 1px solid black;
+  border-radius: 4px;
+  color: black;
+  padding: 5px 15px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+#export-notes:hover {
+  background-color: black;
+  color: aliceblue;
+}
+
+#export-notes:active {
+  transform: scale(1.04);
+}
+
+/* Form de nova nota */
+#add-note-container {
+  display: flex;
+  width: 400px;
+  margin: 1rem auto 0;
+  gap: 1rem;
+}
+
+#add-note-container input,
+#add-note-container button {
+  padding: 10px;
+  border-radius: 5px;
+  color: black;
+}
+
+#add-note-container input {
+  flex: 1;
+  background-color: aliceblue;
+  border: 1px solid black;
+}
+
+#add-note-container button {
+  cursor: pointer;
+  background-color: aliceblue;
+  border: 1px solid black;
+}
+
+/* Notas */
+#notes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 250px);
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.note {
+  min-height: 200px;
+  padding: 1rem;
+  border: 1px solid black;
+  background-color: beige;
+  border-radius: 10px;
+  color: black;
+  position: relative;
+}
+
+.note textarea {
+  background-color: transparent;
+  resize: none;
+  color: black;
+  border: none;
+  height: 100%;
+  outline: none;
+}
+
+.note .bi-pin {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  font-size: 1rem;
+  background-color: white;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.note .bi-x-lg,
+.note .bi-file-earmark-plus {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 0.9rem;
+  padding: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+  color: black;
+  opacity: 0;
+}
+
+.note .bi-file-earmark-plus {
+  top: 40px;
+}
+
+.note:hover > i {
+  opacity: 1;
+}
+
+.note .bi-x-lg:hover,
+.note .bi-file-earmark-plus:hover {
+  transform: scale(1.2);
+}
+
+.note.fixed {
+  background-color: aliceblue;
+}
